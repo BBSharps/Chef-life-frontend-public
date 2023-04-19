@@ -1,0 +1,77 @@
+.Sales_date{
+    width: 320px;
+    height: 3vh;
+    margin: 10px auto;
+}
+.Sales_form{
+    width: 320px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+}
+
+.Sales_form_button{
+    font-size: 11px;
+    margin: 5px auto;
+    width: 50px;
+}
+
+.Sales_list{
+    margin: auto;
+    list-style-type: none; 
+    display:flex;
+    flex-direction: column;
+    padding: 0px;
+    width: 320px;
+}
+.Sales_list_item{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;   
+    font-size: 11px;
+}
+
+.Sales_list_title{
+    font-size: 14px;
+}
+
+.Sales_grid{
+    display: flex;
+    flex-direction: row;
+}
+
+.Sales_grid_line{
+    border: 2px solid rgb(0, 0, 0,0.5);
+   }
+
+.Sales_form_input{
+    width: 320px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.Sales_form_input_select{
+    font-size: 11px;
+}
+
+.Sales_form_input_number{
+    width: 50px;
+    font-size: 11px;
+}
+.Sales_form_input_divNumber{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 5px;
+}
+
+.Sales_body{
+    display: flex;
+    flex-direction: column;
+    margin:74px 0px;
+    width:stretch; 
+    height: 80vh;
+}
+

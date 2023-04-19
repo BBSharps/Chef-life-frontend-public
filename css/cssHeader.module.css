@@ -1,0 +1,37 @@
+.Header{
+    background-color: rgba(0, 0, 0, 1);
+    position: fixed;
+    top: 0px;
+    height: 64px;
+    width:stretch;  
+    padding: 5px 20px 5px 20px;
+    display: flex;
+    flex-direction: row;
+}
+.Header_h1{
+    margin:auto;
+    color: azure;
+}
+.Header_logo{
+    height: 45px;
+    width: auto;
+    margin: 5px;
+}
+.Header_Link{
+color: azure;
+margin-top: 28px;
+margin-left: 20px;
+}
+
+.HomePage_body{
+    display: flex;
+    flex-direction: column;
+    margin:74px 0px;
+    width:stretch; 
+    height: 80vh;
+}
+
+
+
+
+ 

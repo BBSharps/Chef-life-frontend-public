@@ -1,0 +1,58 @@
+.HomePage_list{
+    width: 20vw;
+        list-style-type: none;    
+        margin: 0px;
+        padding: 0px;
+        background-color: rgba(0, 0, 0, 1);
+        
+}
+
+.HomePage_list_display{
+    width: 20vw;
+           
+        margin: 0px;
+        padding: 0px;
+        background-color: rgba(0, 0, 0, 1);
+        
+}
+
+.HomePage_list_item{
+    margin: 40px auto;
+    padding-left: 10%;  
+    font-size: 30px;  
+    color: azure; 
+}
+
+.HomePage_list_display_item{
+    margin: 10px;
+    padding: 10%;  
+    font-size: 20px;  
+    color: azure; 
+    font-size: 14px;
+}    
+
+.HomePage_list_item a:link {
+    color: azure; 
+}
+  
+
+.HomePage_list_item a:visited {
+    color: rgb(240, 255, 255);
+}
+
+.HomePage_list_item a:hover {
+    color: rgb(240, 255, 255, 0.5);
+}
+
+.HomePage_display{
+    height: 60vh;
+    width: 80vw;
+}
+
+.HomePage_body{
+    display: flex;
+    flex-direction: row;
+    margin:74px 0px;
+    width:stretch; 
+    height: 80vh;
+}

@@ -1,0 +1,76 @@
+.Inventory_body{
+    display: flex;
+    flex-direction: column;
+    margin:74px 0px;
+    width:stretch; 
+    height: 80vh;
+}
+
+.Inventory_list{
+    margin: 10px auto;
+    width: 300px;
+}
+
+.Inventory_list_list{
+    list-style: none;
+    padding: 0px;
+    font-size: 11px;
+}
+
+.Inventory_list_list_name{
+    font-size: 14px;
+}
+
+.Inventory_list_list_input{
+    font-size: 11px;
+    width: 50px;
+    margin: 5px;
+}
+
+.Inventory_list_list_button{
+    font-size: 11px;
+    width: 50px;
+}
+
+.Inventory_list_search{
+    margin: 10px auto;
+}
+.Inventory_list_search_text{
+    font-size: 11px;
+}
+.Inventory_list_search_input{
+    font-size: 11px;
+}
+
+.Inventory_form{
+    margin: 10px auto;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.Inventory_form_wrap{
+    display:flex;
+    flex-direction: row;
+    margin: 5px;
+    padding: 5px;
+}
+
+.Inventory_form_input{
+    font-size: 11px;
+    width: 50px;
+    margin-left: 5px;;
+}
+
+.Inventory_form_input_name{
+    font-size: 11px;
+    width: 200px;
+    margin: 5px;
+}
+
+.Inventory_list_form_button{
+    font-size: 11px;
+    width: 50px;
+    margin: 5px;
+}

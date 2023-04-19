@@ -1,0 +1,108 @@
+.menuItems_list_list{
+    margin: auto;
+    list-style-type: none; 
+    display:flex;
+    flex-direction: column;
+    padding: 10px 0px 0px 0px ;
+    width: 400px;
+}    
+.menuItems_list_item{
+    margin: 2px auto;
+    padding: 5px;
+      }
+
+.menuItems_list_item a:link {
+    color: black;
+    font-size: 11px;
+}
+  
+
+.menuItems_list_item a:visited {
+    color: black;
+    font-size: 11px;
+}
+
+.menuItems_list_item a:hover {
+    color: #de3b00;
+    font-size: 12px;
+}
+
+.menuItems_form{
+    position: fixed;
+    bottom: 0px;
+    left: 20vw;  
+    right: 20vw; 
+    width:stretch;     
+    display:flex;
+    flex-direction: column;
+    border-radius: 16px 16px 0px 0px;
+    padding: 5px 5px 5px 10px;
+ }
+
+ .menuItems_form_title{
+   font-size: 14px;
+ }
+
+ .menuItems_form_label{    
+    font-size: 11px;
+ }
+
+.menuItems_form_price{
+    width: 10vw;
+    font-size: 11px;
+ }
+
+ .menuItems_form_name{
+    width: 30vw;
+    font-size: 11px;
+ }
+
+ .menuItems_form_description{
+    font-size: 11px;
+    width: 60vw;
+  }
+
+.menuItems_form_button{   
+    margin: 2px auto;
+     width: 10vw;
+    font-size: 11px;
+ } 
+
+.menuItems_body{
+    display: flex;
+    flex-direction: column;
+    margin:74px 0px;
+    width:stretch; 
+    height: 80vh;
+}
+
+.menuItems_list_all{
+    display: flex;
+    flex-direction: column;
+}
+
+.menuItems_list_line{
+    margin-top: 10vh;
+    border: 2px solid rgb(0, 0, 0,0.5);
+    width: 0px;
+    height: 30vh;
+}
+.menuItems_list_button{
+    margin: 2px auto;
+    border: 0px;
+    background-color: rgb(0, 0, 0, 0);
+    font-size: 14px;
+    color: red; 
+}
+
+.menuItems_list{
+display:flex;
+flex-direction: row;
+margin: 10px auto;
+}
+
+.menuItems_form_select{
+    margin: 2px;
+    width: 150px;
+    font-size: 11px;
+}

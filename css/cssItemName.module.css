@@ -1,0 +1,104 @@
+.itemName_body{
+    display: flex;
+    flex-direction: column;
+    margin:74px 0px;
+    width:stretch; 
+    height: 80vh;
+}
+
+.itemName_information{
+    margin: 10px auto;
+    width: 320px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+ }
+ .itemName_description{
+    width: 320px;  
+    margin: 10px auto;
+    font-size: 14px;
+}
+.itemName_ingredients{
+    padding: 4px;
+    margin: 30px;
+    width: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+ }
+
+ .itemName_list{
+  margin: auto;
+  list-style-type: none; 
+  display:flex;
+  flex-direction: column;
+  padding: 0px;
+  width: 320px;
+}    
+.itemName_list_item{
+  margin: 2px;
+  padding: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
+  }
+
+
+ .itemName_ingredients_line{
+  border: 2px solid rgb(0, 0, 0,0.5);
+ }
+
+ .itemName_update_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 30vw;
+    
+  }
+  .itemName_update_form_textArea{
+width: 480px;
+height: 70px;
+font-size: 11px;
+  }
+  .itemName_update_list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+.itemName_update_form_price_input{
+width: 50px;
+font-size: 11px;
+  }
+
+.itemName_update_form_price_input{
+    font-size: 11px;
+}
+
+.itemName_update_form_itemName_input{
+    width: 260px;
+    font-size: 11px;
+}
+
+.itemName_update_form_description{
+  font-size: 11px;
+}
+.itemNmae_h5{
+  font-size: 14px;
+}
+
+.itemName_update_ingredient_form{
+  font-size: 11px;
+  margin: 5px;
+}
+
+.itemName_update_ingredient_form_select{
+  font-size: 11px;
+  margin: 5px;
+}
+
+.itemName_update_ingredient_form_button{
+  font-size: 11px;
+  width: 50px;
+  margin: 5px;
+}
