@@ -118,6 +118,7 @@ export default function menu() {
           <input
             className={styles.menuItems_form_price}
             type="number"
+            min="0"
             id="item_price"
             onChange={(e) => {
               setItem_price(Number(e.target.value) * 100);

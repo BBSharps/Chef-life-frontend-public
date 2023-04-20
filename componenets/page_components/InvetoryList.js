@@ -62,7 +62,6 @@ export default function InventoryList({
             updateIsDisabled !== ingredient.ingredient_id ? true : false
           }
           onClick={(e) => {
-            console.log(dataMenuIngredients);
             patchMenuIngredients(
               ingredient.ingredient_id,
               update_price,

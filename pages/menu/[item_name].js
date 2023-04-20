@@ -32,19 +32,21 @@ function ItemName() {
     getMenuIngredients(loadMenuIngredients);
   loadingMenuIngredients ? null : (loadMenuIngredients = false);
 
-  const [item_name, setItem_name] = useState();
-  const [item_price, setItem_price] = useState();
-  const [item_description, setItem_description] = useState();
-  const [ingredient_id, setingredient_id] = useState();
-  const [addIsDisabled, setAddIsDisabled] = useState(true);
-  const [addIsVisible, setAddIsVisible] = useState(true);
-  const [submitIsDisabled, setSubmitIsDisabled] = useState(true);
-
   let filterData = dataMenuItems
     ? dataMenuItems.menuItems.filter((item) => {
         return item.item_id === item_id;
       })
     : false;
+
+  const [item_name, setItem_name] = useState();
+  const [item_price, setItem_price] = useState();
+  const [item_description, setItem_description] = useState();
+  const [ingredient_id, setIngredient_id] = useState();
+  const [ingredient_name, setIngredient_name] = useState();
+  const [addIsDisabled, setAddIsDisabled] = useState(true);
+  const [submitIsDisabled, setSubmitIsDisabled] = useState(true);
+  const [pageData, setPageData] = useState();
+  const [newIngredient, setNewIngredient] = useState([]);
 
   if (!filterData || filterData.length === 0) {
     return (
@@ -66,29 +68,39 @@ function ItemName() {
             margin: 0px;
           }
         `}</style>
-        <Header page={filterData[0].item_name} />
+        <Header
+          page={pageData ? pageData[0].item_name : filterData[0].item_name}
+        />
         <div className={styles.itemName_information}>
-          <h3>{filterData[0].item_name}</h3>
-          <h4>Price : £{filterData[0].item_price / 100}</h4>
+          <h3>{pageData ? pageData[0].item_name : filterData[0].item_name}</h3>
+          <h4>
+            Price : £
+            {pageData
+              ? pageData[0].item_price / 100
+              : filterData[0].item_price / 100}
+          </h4>
         </div>
         <h4 className={styles.itemName_description}>
-          {filterData[0].item_description}
+          {pageData
+            ? pageData[0].item_description
+            : filterData[0].item_description}
         </h4>
         <div className={styles.itemName_ingredients}>
           <div className={styles.itemName_ingredients_list}>
             <h5 className={styles.itemName_h5}>Ingredients</h5>
             <ul className={styles.itemName_list}>
               {dataMenuIngredientsById ? (
-                dataMenuIngredientsById.ingredientsByMenuId.map(
-                  (ingredient) => {
-                    keyId++;
-                    return (
-                      <li className={styles.itemName_item} key={`i${keyId}`}>
-                        {ingredient.ingredient_name}
-                      </li>
-                    );
-                  }
-                )
+                [
+                  ...dataMenuIngredientsById.ingredientsByMenuId,
+                  ...newIngredient,
+                ].map((ingredient) => {
+                  keyId++;
+                  return (
+                    <li className={styles.itemName_item} key={`i${keyId}`}>
+                      {ingredient.ingredient_name}
+                    </li>
+                  );
+                })
               ) : (
                 <li>Loading...</li>
               )}
@@ -102,7 +114,9 @@ function ItemName() {
                 <label htmlFor="item_name">Name : </label>
                 <input
                   className={styles.itemName_update_form_itemName_input}
-                  defaultValue={filterData[0].item_name}
+                  defaultValue={
+                    pageData ? pageData[0].item_name : filterData[0].item_name
+                  }
                   id="item_name"
                   onChange={(e) => {
                     setItem_name(e.target.value.replaceAll("'", "''"));
@@ -116,7 +130,12 @@ function ItemName() {
                 <label htmlFor="item_price">Price : £</label>
                 <input
                   className={styles.itemName_update_form_price_input}
-                  defaultValue={filterData[0].item_price / 100}
+                  min="0"
+                  defaultValue={
+                    pageData
+                      ? pageData[0].item_price / 100
+                      : filterData[0].item_price / 100
+                  }
                   type="number"
                   id="item_price"
                   onChange={(e) => {
@@ -131,7 +150,11 @@ function ItemName() {
                 <label htmlFor="item_description">Description : </label>
                 <textarea
                   className={styles.itemName_update_form_textArea}
-                  defaultValue={filterData[0].item_description}
+                  defaultValue={
+                    pageData
+                      ? pageData[0].item_description
+                      : filterData[0].item_description
+                  }
                   id="item_description"
                   onChange={(e) => {
                     setItem_description(e.target.value.replaceAll("'", "''"));
@@ -155,7 +178,7 @@ function ItemName() {
                     item_description
                   )
                     .then((res) => {
-                      loadMenuItems = true;
+                      setPageData(res.menuItemsById);
                     })
                     .catch((err) => {
                       console.log(err);
@@ -179,7 +202,8 @@ function ItemName() {
                     e.target.value === "Select"
                       ? setAddIsDisabled(true)
                       : setAddIsDisabled(false);
-                    setingredient_id(Number(e.target.value.slice(0, 2)));
+                    setIngredient_name(e.target.value.slice(4));
+                    setIngredient_id(Number(e.target.value.slice(0, 2)));
                   }}
                 >
                   <option key="opt0">Select</option>
@@ -192,26 +216,27 @@ function ItemName() {
                   })}
                 </select>
               ) : null}
-              {addIsVisible ? (
-                <button
-                  className={styles.itemName_update_ingredient_form_button}
-                  disabled={addIsDisabled}
-                  type="submit"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setAddIsVisible(false);
-                    postItemsIngredients(item_id, ingredient_id)
-                      .then((res) => {
-                        res ? setAddIsVisible(true) : null;
-                      })
-                      .catch((err) => {
-                        console.log(err);
-                      });
-                  }}
-                >
-                  add
-                </button>
-              ) : null}
+              <button
+                className={styles.itemName_update_ingredient_form_button}
+                disabled={addIsDisabled}
+                type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setAddIsDisabled(true);
+                  postItemsIngredients(item_id, ingredient_id)
+                    .then((res) => {
+                      setNewIngredient([
+                        ...newIngredient,
+                        { ingredient_name: ingredient_name },
+                      ]);
+                    })
+                    .catch((err) => {
+                      console.log(err);
+                    });
+                }}
+              >
+                add
+              </button>
             </form>
           </div>
         </div>

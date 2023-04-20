@@ -15,6 +15,13 @@
     font-size: 11px;
     margin: 5px auto;
     width: 50px;
+    color:white;
+    background-color: rgb(0, 0, 0, 1);
+}
+
+.Sales_form_button:disabled{   
+    color:white;
+    background-color: rgb(0, 0, 0, 0.5);
 }
 
 .Sales_list{
